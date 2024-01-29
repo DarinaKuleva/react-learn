@@ -1,0 +1,15 @@
+.dish {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin-right: 16px;
+}
+
+.counter {
+  margin: 0 16px;
+}

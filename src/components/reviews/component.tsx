@@ -6,13 +6,13 @@ interface Props {
 
 export const Reviews = ({ reviews }: Props) => {
   return (
-    <>
+    <div>
       <h3>Отзывы</h3>
       <ul>
         {reviews.map((review) => (
           <li key={review.id}>{review.text}</li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
