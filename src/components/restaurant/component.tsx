@@ -13,7 +13,7 @@ export const Restaurant = ({ restaurant }: Props) => {
       <h2>{restaurant.name}</h2>
       <Menu menu={restaurant.menu} />
       <Reviews reviews={restaurant.reviews} />
-      <ReviewForm restaurantName={restaurant.name}/>
+      <ReviewForm key={restaurant.id} restaurantName={restaurant.name}/>
     </div>
   );
 };
