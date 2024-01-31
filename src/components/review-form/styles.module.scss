@@ -1,0 +1,20 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+}
+
+.field {
+  margin-right: 16px;
+  display: flex;
+  flex-wrap: wrap;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.label {
+  margin-right: 8px;
+}
