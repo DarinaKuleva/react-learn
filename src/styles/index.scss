@@ -1,8 +1,22 @@
 html,
 body {
   margin: 0;
+  height: 100%;
+}
+
+p {
+  margin: 0;
 }
 
 * {
   box-sizing: border-box;
+}
+
+ol {
+  list-style-type:  none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
