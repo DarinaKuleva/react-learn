@@ -1,11 +1,11 @@
 export enum EActionType {
-  SET_TEXT = 'setText',
-  SET_RATING = 'setRating',
+  SET_NAME = 'setName',
+  SET_MAIL = 'setMail',
 }
 
 export interface IState {
-  text: string;
-  rating: number;
+  name: string;
+  mail: string;
 }
 
 export interface IAction {
