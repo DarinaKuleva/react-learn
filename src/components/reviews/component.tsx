@@ -1,16 +1,16 @@
-import { TReviews } from '../../constants/mocks-interface.ts';
+import { Review } from '../review/component.tsx';
 
 interface Props {
-  reviews: TReviews;
+  reviewsIds: Array<string>;
 }
 
-export const Reviews = ({ reviews }: Props) => {
+export const Reviews = ({ reviewsIds }: Props) => {
   return (
     <div>
       <h3>Отзывы</h3>
       <ul>
-        {reviews.map((review) => (
-          <li key={review.id}>{review.text}</li>
+        {reviewsIds.map((reviewId) => (
+          <Review reviewId={reviewId} key={reviewId} />
         ))}
       </ul>
     </div>
