@@ -1,26 +1,25 @@
-export type TRestaurants = Array<IRestaurant>;
-
-export interface IRestaurant {
+export type TRestaurant = {
   id: string;
   name: string;
-  menu: TMenu;
-  reviews: TReviews;
-}
+  menu: string[];
+  reviews: string[];
+};
 
-export type TMenu = Array<IMenu>;
-
-interface IMenu {
+export type TDish = {
   id: string;
   name: string;
   price: number;
-  ingredients: Array<string>;
-}
+  ingredients: string[];
+};
 
-export type TReviews = Array<IReview>;
-
-interface IReview {
+export type TReview = {
   id: string;
-  user: string;
+  userId: string;
   text: string;
   rating: number;
-}
+};
+
+export type TUser = {
+  id: string;
+  name: string;
+};
