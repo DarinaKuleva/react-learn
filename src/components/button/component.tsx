@@ -1,24 +1,18 @@
-import { ReactNode } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 import classNames from 'classnames';
 
 import styles from './styles.module.scss';
 
 interface Props {
-    onClick: React.MouseEventHandler<HTMLButtonElement>;
-    isDisabled?: boolean;
-    children: ReactNode;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  isDisabled?: boolean;
+  children: ReactNode;
 }
 
-export const Button = ({onClick, isDisabled, children}: Props) => {
+export const Button = forwardRef(({ onClick, isDisabled, children }: Props, ref) => {
   return (
-    <button
-        onClick={onClick}
-        className={classNames(
-            styles.button,
-            isDisabled && styles.disabled,
-        )}
-    >
-         {children}
+    <button ref={ref} onClick={onClick} className={classNames(styles.button, isDisabled && styles.disabled)}>
+      {children}
     </button>
   );
-};
+});

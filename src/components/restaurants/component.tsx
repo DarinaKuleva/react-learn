@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Tab } from '../tab/component.tsx';
 import { selectRestaurantIds } from '../../redux/entities/restaurant/selectors.ts';
 import { Restaurant } from '../restaurant/component.tsx';
+import { ReviewForm } from '../review-form/component.tsx';
 
 import styles from './styles.module.scss';
 
@@ -21,6 +22,7 @@ export const Restaurants = () => {
         />
       ))}
       <Restaurant restaurantId={currentRestaurantId} />
+      <ReviewForm key={currentRestaurantId} restaurantId={currentRestaurantId} />
     </div>
   );
 };

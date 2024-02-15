@@ -1,11 +1,13 @@
 import { FC, useContext, useReducer } from 'react';
+import { useSelector } from 'react-redux';
+import { selectRestaurantById } from '../../redux/entities/restaurant/selectors.ts';
 import { EActionType, IAction, IState } from './review-form-interface.ts';
 import { UserContext } from '../../contexts/user.ts';
 
 import styles from './styles.module.scss';
 
 interface Props {
-  restaurantName: string;
+  restaurantId: string;
 }
 
 const INITIAL_VALUE: IState = {
@@ -33,13 +35,14 @@ const reducer = (state: IState, action: IAction): IState => {
   }
 };
 
-export const ReviewForm: FC<Props> = ({ restaurantName }) => {
+export const ReviewForm: FC<Props> = ({ restaurantId }) => {
   const [form, dispatch] = useReducer(reducer, INITIAL_VALUE);
   const { user } = useContext(UserContext);
+  const restaurant = useSelector((state) => selectRestaurantById(state, restaurantId));
 
   return (
     <div>
-      <h3>Форма обратной связи по ресторану {restaurantName}</h3>
+      <h3>Форма обратной связи по ресторану {restaurant.name}</h3>
       <form className={styles.form}>
         <div className={styles.field}>{user?.name}</div>
         <div className={styles.field}>

@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { Button } from '../button/component.tsx';
 import { LoginForm } from '../login-form/component.tsx';
 import { UserContext } from '../../contexts/user.ts';
+import { CartButtonContainer } from '../cart-button/container.tsx';
 
 import styles from './styles.module.scss';
 
@@ -23,6 +24,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <h1 className={styles.title}>Рестораны</h1>
+      <CartButtonContainer />
       {!(user.user?.name && user.user?.mail) ? (
         <Button onClick={() => setShowLoginForm(true)}>Войти</Button>
       ) : (
